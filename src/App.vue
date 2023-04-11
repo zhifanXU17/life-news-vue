@@ -42,7 +42,7 @@
           <router-link to="/technology" custom v-slot="{ navigate, isActive }">
             <li
               @click="navigate"
-              class="px-4 hover:cursor-pointer hover:text-teal-500 dark:text-white dark:hover:text-teal-500"
+              class="px-4 hover:cursor-pointer hover:text-teal-500 hover:animate-link-animation dark:text-white dark:hover:text-teal-500"
               :class="isActive ? 'text-teal-500' : ''"
             >
               科技
@@ -51,7 +51,7 @@
           <router-link to="/finance" custom v-slot="{ navigate, isActive }">
             <li
               @click="navigate"
-              class="px-4 hover:cursor-pointer hover:text-teal-500 dark:text-white dark:hover:text-teal-500"
+              class="px-4 hover:cursor-pointer hover:text-teal-500 hover:animate-link-animation dark:text-white dark:hover:text-teal-500"
               :class="isActive ? 'text-teal-500' : ''"
             >
               财经
@@ -60,7 +60,7 @@
           <router-link to="/hub" custom v-slot="{ navigate, isActive }">
             <li
               @click="navigate"
-              class="px-4 hover:cursor-pointer hover:text-teal-500 dark:text-white dark:hover:text-teal-500"
+              class="px-4 hover:cursor-pointer hover:text-teal-500 hover:animate-link-animation dark:text-white dark:hover:text-teal-500"
               :class="isActive ? 'text-teal-500' : ''"
             >
               社区
@@ -73,7 +73,7 @@
           >
             <li
               @click="navigate"
-              class="px-4 hover:cursor-pointer hover:text-teal-500 dark:text-white dark:hover:text-teal-500"
+              class="px-4 hover:cursor-pointer hover:text-teal-500 hover:animate-link-animation dark:text-white dark:hover:text-teal-500"
               :class="isActive ? 'text-teal-500' : ''"
             >
               娱乐
@@ -122,6 +122,7 @@
         <button
           type="button"
           class="md:hidden w-10 h-10 rounded border border-gray-400 dark:text-white flex items-center justify-center focus:outline-none focus:ring-4 animate-darkMode-Button"
+          @click="handleShowMenu"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -138,18 +139,55 @@
             />
           </svg>
         </button>
+
+        <ul
+          class="md:hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 py-2 text-sm text-gray-700 dark:text-gray-200 absolute top-14 right-4"
+          v-show="isOpenMenu"
+        >
+          <li
+            @click="handleClickRoute('/technology')"
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            科技
+          </li>
+
+          <li
+            @click="handleClickRoute('/finance')"
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            财经
+          </li>
+
+          <li
+            @click="handleClickRoute('/hub')"
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            社区
+          </li>
+
+          <li
+            @click="handleClickRoute('/entertainment')"
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            娱乐
+          </li>
+        </ul>
       </nav>
     </header>
 
     <router-view class="container mx-auto"></router-view>
+
+    <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
+import Footer from '@/components/Footer.vue'
 import { isDark as isDarkMode } from '@bassist/utils'
 import { useStorage } from '@/hooks'
 import type { PrefersColorScheme } from '@bassist/utils'
 import { ref } from 'vue'
+import router from './router'
 
 const searchItem = ref<string>('')
 const handleSearch = () => {
@@ -182,5 +220,15 @@ updateTheme(defaultThemeIsDark)
 function toggleTheme() {
   const isCurrentThemeDark = getLocalTheme() === 'dark'
   updateTheme(!isCurrentThemeDark)
+}
+
+const isOpenMenu = ref<boolean>(false)
+const handleShowMenu = () => {
+  isOpenMenu.value = !isOpenMenu.value
+}
+
+const handleClickRoute = (href: string) => {
+  router.push(href)
+  handleShowMenu()
 }
 </script>
