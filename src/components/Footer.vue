@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="absolute bottom-0 w-full h-20 bg-white dark:bg-gray-800 dark:text-white border-b border-gray-200 shadow-sm flex items-center"
+    class="bottom-0 w-full h-20 bg-white dark:bg-gray-800 dark:text-white border-b border-gray-200 shadow-sm flex items-center"
   >
     <div class="container mx-auto flex justify-center items-center">
       <a
@@ -46,7 +46,7 @@
       </a>
 
       <div class="flex flex-col border-l border-slate-200 ml-5 px-5 text-sm">
-        <span class="mb-2">@ 2023 LULU</span>
+        <span class="mb-2">@ 2023 Life & News</span>
         <span class="inline-flex items-center">
           网站字体:
           <a

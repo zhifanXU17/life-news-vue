@@ -1,7 +1,7 @@
 <template>
-  <div>technology</div>
+  <div>Base64</div>
 </template>
 
 <script setup lang="ts"></script>
 
-<style lang="less" scoped></style>
+<style scoped></style>

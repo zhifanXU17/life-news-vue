@@ -6,6 +6,9 @@ module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      colors: {
+        'half-transparent': 'rgba(0, 0, 0, 0.5)',
+      },
       fontFamily: {
         LXGWWenKai: ['LXGWWenKai', ...defaultTheme.fontFamily.sans],
       },

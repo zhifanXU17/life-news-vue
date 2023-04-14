@@ -7,19 +7,26 @@ import type { RouteRecordRaw } from 'vue-router'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    alias: '/technology',
-    name: 'technology',
-    component: () => import('@/views/technology.vue'),
+    alias: '/tools',
+    name: 'tools',
+    component: () => import('@/views/tools.vue'),
     meta: {
-      title: 'technology',
+      title: 'tools',
     },
+    children: [
+      {
+        path: 'colors',
+        name: 'colors',
+        component: () => import('@/views/tools/colors.vue'),
+      },
+    ],
   },
   {
-    path: '/finance',
-    name: 'finance',
-    component: () => import('@/views/finance.vue'),
+    path: '/news',
+    name: 'news',
+    component: () => import('@/views/news.vue'),
     meta: {
-      title: 'finance',
+      title: 'news',
     },
   },
   {
