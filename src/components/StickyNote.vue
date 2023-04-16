@@ -3,7 +3,7 @@
   <div class="note pt-9">
     <div
       id="jinrishici-sentence"
-      class="note-container flex justify-center py-5"
+      class="note-container flex justify-center px-14 py-5"
     >
       {{ gushi }}
     </div>

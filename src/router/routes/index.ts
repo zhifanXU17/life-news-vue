@@ -19,6 +19,11 @@ const routes: RouteRecordRaw[] = [
         name: 'colors',
         component: () => import('@/views/tools/colors.vue'),
       },
+      {
+        path: 'base64',
+        name: 'base64',
+        component: () => import('@/views/tools/base64.vue'),
+      },
     ],
   },
   {
