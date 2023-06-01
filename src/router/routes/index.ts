@@ -24,6 +24,11 @@ const routes: RouteRecordRaw[] = [
         name: 'base64',
         component: () => import('@/views/tools/base64.vue'),
       },
+      {
+        path: 'loans',
+        name: 'loans',
+        component: () => import('@/views/tools/loans.vue'),
+      },
     ],
   },
   {

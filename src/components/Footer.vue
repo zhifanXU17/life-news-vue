@@ -47,16 +47,29 @@
 
       <div class="flex flex-col border-l border-slate-200 ml-5 px-5 text-sm">
         <span class="mb-2">@ 2023 Life & News</span>
-        <span class="inline-flex items-center">
-          网站字体:
-          <a
-            href="https://github.com/lxgw/LxgwWenKai"
-            target="_blank"
-            class="inline-flex items-center ml-2 hover:text-teal-500 dark:hover:text-teal-500"
-          >
-            霞鹜文楷
-          </a>
-        </span>
+        <div>
+          <span class="inline-flex items-center mr-6">
+            网站字体:
+            <a
+              href="https://github.com/lxgw/LxgwWenKai"
+              target="_blank"
+              class="inline-flex items-center ml-2 hover:text-teal-500 dark:hover:text-teal-500"
+            >
+              霞鹜文楷
+            </a>
+          </span>
+
+          <span class="inline-flex items-center">
+            图片来源:
+            <a
+              href="https://www.iconfont.cn/illustrations/detail?cid=44142"
+              target="_blank"
+              class="inline-flex items-center ml-2 hover:text-teal-500 dark:hover:text-teal-500"
+            >
+              那些花儿
+            </a>
+          </span>
+        </div>
       </div>
     </div>
   </footer>
